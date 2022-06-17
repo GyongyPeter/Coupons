@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<div class="prices">
+    <div>
+        <h3>The <b>original</b> price of the product/service:</h3>
+        <h3>{{price}}Ft</h3>
+    </div>
+    <hr>
+    <h4>Select company, activate the coupon, and you will see the discounted price!</h4>
+    <div *ngIf="priceWithDiscount">
+        <h2 style="color: rgb(255, 230, 0)">New price with {{currentCoupon?.discount}}% discount is {{priceWithDiscount}}Ft</h2>
+        <hr>
+    </div>
+</div>
+
+<div style="margin: 50px 0px 50px 0px;">
+    <h5 style="text-align: center; margin-bottom: 20px;">Select company</h5>
+    <div class="select-div">
+        <select class="form-select form-select-lg" id="company-selector" (change)="selectCompany($event.target)">
+            <option></option>
+            <option *ngFor="let company of companies" value="{{company._id}}">
+                {{company.name}}
+            </option>
+        </select>
+    </div>
+
+    <!-- <div *ngIf="!isCompanyInfoHidden">
+        <p *ngIf="selectedCompany">{{selectedCompany.name}}</p>
+        <p *ngIf="currentCoupon">{{currentCoupon.couponType}}</p>
+    </div> -->
+</div>
+
+<div class="card-deck">
+    <div id="card-link" class="card">
+        <div style="width: 100%; height: 50px; background: rgb(179, 126, 107)"></div>
+        <div class="card-body">
+            <h5 class="card-title">Coupon at the partner's website</h5>
+            <p class="card-text">You can activate your coupon at the partner company's website directly. If you click to
+                'Activate' you will redirect to the partner's website.</p>
+        </div>
+        <div class="card-footer">
+            <p style="margin: 0"><a href="{{selectedCompany?.website}}" id="link-activate-button" class="btn btn-outline-success" target="_blank">Visit
+                    {{selectedCompany?.name}}'s website to activate!</a></p>
+        </div>
+    </div>
+    <div id="card-static" class="card">
+        <div style="width: 100%; height: 50px; background: rgb(143, 100, 85)"></div>
+        <div class="card-body">
+            <h5 class="card-title">Same coupon code for unlimited usage!</h5>
+            <p class="card-text">You can activate the coupon unlimited times, but you have to wait between two activation {{static}} seconds.</p>
+        </div>
+        <div class="card-footer">
+            <button id="static-activate-button" type="button" class="btn btn-outline-success"
+                (click)="activateCoupon(currentCoupon!)">Activate</button>
+            <div *ngIf="priceWithDiscount">
+                <h5>{{currentCoupon?.couponCode}}</h5>
+                <p style="color:green">Coupon activated successfully!</p>
+            </div>
+            <div *ngIf="isCouponActivatedBefore" style="margin-top: 10px">
+                <p style="color:rgba(255, 0, 0, 0.486)">You cannot activate this coupon until {{remainingSecondsUntilNextActivation}} seconds!</p>
+            </div>
+        </div>
+    </div>
+    <div id="card-dynamic" class="card">
+        <div style="width: 100%; height: 50px; background: rgb(119, 69, 52)"></div>
+        <div class="card-body">
+            <h5 class="card-title">Coupon code can use only once!</h5>
+            <p class="card-text">You can activate the coupon once. If you activated, new coupon will generated.</p>
+        </div>
+        <div class="card-footer">
+            <button id="dynamic-activate-button" type="button" class="btn btn-outline-success">Activate (out of service)</button>
+        </div>
+    </div>
+</div>
+
+<app-about></app-about>

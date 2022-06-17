@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<h1 class="h1history">Coupons</h1>
+<hr>
+<div class="tablediv">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Coupon code</th>
+        <th scope="col">Coupon type</th>
+        <th scope="col">Description</th>
+        <th scope="col">Discount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let coupon of coupons; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{coupon.couponCode}}</td>
+        <td>{{coupon.couponType}}</td>
+        <td>{{coupon.description}}</td>
+        <td>{{coupon.discount}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <img src="https://www.pngkey.com/png/full/120-1200920_coupon-comments-coupon-png-icon.png">
+</div>

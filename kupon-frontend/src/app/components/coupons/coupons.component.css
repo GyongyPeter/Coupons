@@ -1,0 +1,21 @@
+.h1history {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.table {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.tablediv {
+    width: 100%;
+    text-align: center;
+}
+
+img {
+    margin-top: 40px;
+    width: 20%;
+    height: 20%;
+}

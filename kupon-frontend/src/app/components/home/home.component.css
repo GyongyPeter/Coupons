@@ -1,0 +1,65 @@
+.card {
+    display: inline-block;
+    margin: 0px 10px 0px 10px;
+    transition: transform 1s;
+    background: rgb(206, 201, 199);
+    vertical-align: top;
+}
+
+
+.card-body {
+    min-height: 250px;
+    text-align: center;
+}
+
+@media (min-width: 1241px) {
+    .card {
+        width: 20%;
+    }
+}
+
+@media (max-width: 1240px) {
+    .card {
+        width: 30%;
+    }
+}
+
+.card:hover {
+    transform: scale(1.1)
+}
+
+.card-deck {
+    width: 100%;
+    text-align: center;
+}
+
+.select-div {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+select {
+    margin: 0 auto;
+    width: 20%;
+}
+
+.disabled-card {
+    opacity: 0.3;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+.table {
+    width: 30%;
+    text-align: center;
+}
+
+.prices {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}

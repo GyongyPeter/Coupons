@@ -1,0 +1,45 @@
+.h1history {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.table {
+    margin: 0 auto;
+}
+
+@media (min-width: 1241px) {
+    .table {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1240px) {
+    .table {
+        width: 80%;
+    }
+}
+
+.tablediv {
+    width: 100%;
+    text-align: center;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+    font-size: 16px;
+}
+
+a:hover {
+    color: chartreuse;
+    font-size: 18px;
+}
+
+img {
+    margin-top: 40px;
+    width: 20%;
+    height: 20%;
+}

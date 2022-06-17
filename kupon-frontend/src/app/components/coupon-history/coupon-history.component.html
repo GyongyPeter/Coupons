@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<h1 class="h1history">Already activated coupons</h1>
+<hr>
+<div class="tablediv">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Date of activation</th>
+        <th scope="col">Coupon code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let coupon of activatedCoupons; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{coupon.createdAt}}</td>
+        <td>{{coupon.couponCode}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

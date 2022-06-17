@@ -1,0 +1,11 @@
+import express from 'express';
+const couponRouter = express.Router();
+import { getCoupons, createCoupon, updateCoupon, deleteCoupon, saveActivatedCoupon, getActivatedCoupons, getLastActivatedSameCoupon } from '../controllers/couponController.js';
+couponRouter.get('/', getCoupons);
+couponRouter.post('/', createCoupon);
+couponRouter.patch('/:id', updateCoupon);
+couponRouter.delete('/:id', deleteCoupon);
+couponRouter.post('/save', saveActivatedCoupon);
+couponRouter.get('/history', getActivatedCoupons);
+couponRouter.get('/lastActivatedSameCoupon/:id', getLastActivatedSameCoupon);
+export default couponRouter;
