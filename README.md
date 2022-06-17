@@ -6,6 +6,8 @@ This project was an interview task.
 1. `npm i`
 2. `node app.js`
 
+(maybe you should install npm/node/.. others)
+
 ### To run & set up frontend:
 
 1. `npm i`
